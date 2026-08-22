@@ -1,0 +1,122 @@
+{
+  "id": "SUBJECT-planeacion",
+  "technicalId": "subject-planeacion",
+  "name": "Soporte y planeación",
+  "version": "0.1.0",
+  "image": "ghcr.io/opus-perpetuus/subject-planeacion:0.1.0",
+  "compat": {
+    "nox": ">=0.5.0",
+    "kit": "^0.5.0"
+  },
+  "api": {
+    "basePath": "/",
+    "port": 3000,
+    "healthPath": "/health"
+  },
+  "permissions": [
+    {
+      "id": "subject.planeacion.tickets.read",
+      "label": "Ver Tickets"
+    },
+    {
+      "id": "subject.planeacion.tickets.write",
+      "label": "Editar Tickets"
+    },
+    {
+      "id": "subject.planeacion.planeacion-proyectos.read",
+      "label": "Ver Proyectos"
+    },
+    {
+      "id": "subject.planeacion.planeacion-proyectos.write",
+      "label": "Editar Proyectos"
+    },
+    {
+      "id": "subject.planeacion.planeacion-mis-tareas.read",
+      "label": "Ver Mis tareas"
+    },
+    {
+      "id": "subject.planeacion.planeacion-mis-tareas.write",
+      "label": "Editar Mis tareas"
+    },
+    {
+      "id": "subject.planeacion.planeacion-proyectos-task.read",
+      "label": "Ver Tareas de proyecto"
+    },
+    {
+      "id": "subject.planeacion.planeacion-proyectos-task.write",
+      "label": "Editar Tareas de proyecto"
+    }
+  ],
+  "pages": [
+    {
+      "id": "planeacion.tickets",
+      "path": "tickets",
+      "permission": "subject.planeacion.tickets.read"
+    },
+    {
+      "id": "planeacion.planeacion-proyectos",
+      "path": "planeacion-proyectos",
+      "permission": "subject.planeacion.planeacion-proyectos.read"
+    },
+    {
+      "id": "planeacion.planeacion-mis-tareas",
+      "path": "planeacion-mis-tareas",
+      "permission": "subject.planeacion.planeacion-mis-tareas.read"
+    },
+    {
+      "id": "planeacion.planeacion-proyectos-task",
+      "path": "planeacion-proyectos-task",
+      "permission": "subject.planeacion.planeacion-proyectos-task.read"
+    }
+  ],
+  "menu": [
+    {
+      "id": "planeacion.root",
+      "label": "Soporte y planeación",
+      "order": 0,
+      "children": [
+        {
+          "id": "planeacion.tickets",
+          "label": "Tickets",
+          "order": 0,
+          "pageId": "planeacion.tickets",
+          "path": "tickets",
+          "permission": "subject.planeacion.tickets.read"
+        },
+        {
+          "id": "planeacion.planeacion-proyectos",
+          "label": "Proyectos",
+          "order": 0,
+          "pageId": "planeacion.planeacion-proyectos",
+          "path": "planeacion-proyectos",
+          "permission": "subject.planeacion.planeacion-proyectos.read"
+        },
+        {
+          "id": "planeacion.planeacion-mis-tareas",
+          "label": "Mis tareas",
+          "order": 1,
+          "pageId": "planeacion.planeacion-mis-tareas",
+          "path": "planeacion-mis-tareas",
+          "permission": "subject.planeacion.planeacion-mis-tareas.read"
+        },
+        {
+          "id": "planeacion.planeacion-proyectos-task",
+          "label": "Tareas de proyecto",
+          "order": 2,
+          "pageId": "planeacion.planeacion-proyectos-task",
+          "path": "planeacion-proyectos-task",
+          "permission": "subject.planeacion.planeacion-proyectos-task.read"
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "domain": "shared-nox-postgres"
+  },
+  "resources": {
+    "tickets": "tickets",
+    "planeacion-proyectos": "planeacion_proyectos",
+    "planeacion-mis-tareas": "planeacion_mis_tareas",
+    "planeacion-proyectos-task": "planeacion_proyectos_task"
+  }
+}
