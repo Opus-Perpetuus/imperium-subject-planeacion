@@ -47,6 +47,51 @@
       "label": "Editar Tareas de proyecto"
     }
   ],
+  "menu": [
+    {
+      "id": "planeacion.root",
+      "label": "Soporte y planeación",
+      "order": 0,
+      "children": [
+        {
+          "id": "planeacion.tickets",
+          "label": "Tickets",
+          "pageId": "planeacion.tickets",
+          "order": 0,
+          "path": "tickets",
+          "permission": "subject.planeacion.tickets.read",
+          "icon": "document"
+        },
+        {
+          "id": "planeacion.planeacion-proyectos",
+          "label": "Proyectos",
+          "pageId": "planeacion.planeacion-proyectos",
+          "order": 0,
+          "path": "planeacion-proyectos",
+          "permission": "subject.planeacion.planeacion-proyectos.read",
+          "icon": "document"
+        },
+        {
+          "id": "planeacion.planeacion-mis-tareas",
+          "label": "Mis tareas",
+          "pageId": "planeacion.planeacion-mis-tareas",
+          "order": 1,
+          "path": "planeacion-mis-tareas",
+          "permission": "subject.planeacion.planeacion-mis-tareas.read",
+          "icon": "document"
+        },
+        {
+          "id": "planeacion.planeacion-proyectos-task",
+          "label": "Tareas de proyecto",
+          "pageId": "planeacion.planeacion-proyectos-task",
+          "order": 2,
+          "path": "planeacion-proyectos-task",
+          "permission": "subject.planeacion.planeacion-proyectos-task.read",
+          "icon": "document"
+        }
+      ]
+    }
+  ],
   "pages": [
     {
       "id": "planeacion.tickets",
@@ -69,54 +114,14 @@
       "permission": "subject.planeacion.planeacion-proyectos-task.read"
     }
   ],
-  "menu": [
-    {
-      "id": "planeacion.root",
-      "label": "Soporte y planeación",
-      "order": 0,
-      "children": [
-        {
-          "id": "planeacion.tickets",
-          "label": "Tickets",
-          "order": 0,
-          "pageId": "planeacion.tickets",
-          "path": "tickets",
-          "permission": "subject.planeacion.tickets.read"
-        },
-        {
-          "id": "planeacion.planeacion-proyectos",
-          "label": "Proyectos",
-          "order": 0,
-          "pageId": "planeacion.planeacion-proyectos",
-          "path": "planeacion-proyectos",
-          "permission": "subject.planeacion.planeacion-proyectos.read"
-        },
-        {
-          "id": "planeacion.planeacion-mis-tareas",
-          "label": "Mis tareas",
-          "order": 1,
-          "pageId": "planeacion.planeacion-mis-tareas",
-          "path": "planeacion-mis-tareas",
-          "permission": "subject.planeacion.planeacion-mis-tareas.read"
-        },
-        {
-          "id": "planeacion.planeacion-proyectos-task",
-          "label": "Tareas de proyecto",
-          "order": 2,
-          "pageId": "planeacion.planeacion-proyectos-task",
-          "path": "planeacion-proyectos-task",
-          "permission": "subject.planeacion.planeacion-proyectos-task.read"
-        }
-      ]
-    }
-  ],
   "storage": {
-    "domain": "shared-nox-postgres"
+    "domain": "shared-nox-postgres",
+    "files": false
   },
   "resources": {
     "tickets": "tickets",
-    "planeacion-proyectos": "planeacion_proyectos",
-    "planeacion-mis-tareas": "planeacion_mis_tareas",
-    "planeacion-proyectos-task": "planeacion_proyectos_task"
+    "planeacion-proyectos": "planeacion-proyectos",
+    "planeacion-mis-tareas": "planeacion-mis-tareas",
+    "planeacion-proyectos-task": "planeacion-proyectos-task"
   }
 }
