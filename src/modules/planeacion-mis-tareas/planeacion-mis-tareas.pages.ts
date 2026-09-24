@@ -52,13 +52,23 @@ export const planeacion_mis_tareas_pages: KirletPageDecl[] = [
           form: {
             fields: [
               { name: "name", component: "input-text", label: "Nombre", required: true },
-              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "description", component: "input-textarea", label: "Descripción" },
               { name: "ref", component: "input-text", label: "Referencia (_ref)" },
-              { name: "priority", component: "input-text", label: "priority" },
-              { name: "due_date", component: "input-text", label: "due date" },
-              { name: "parent_task", component: "input-text", label: "parent task" },
+              {
+                name: "priority",
+                component: "input-menu",
+                label: "priority",
+                options: [
+                  { value: "baja", label: "Baja" },
+                  { value: "media", label: "Media" },
+                  { value: "alta", label: "Alta" },
+                  { value: "critica", label: "Crítica" },
+                ],
+              },
+              { name: "due_date", component: "input-date", label: "due date" },
+              { name: "parent_task", component: "input-datalist", label: "parent task", optionsSource: "api://m/subject-planeacion/planeacion-mis-tareas?as=options&limite=1000" },
               { name: "owner_user", component: "input-text", label: "owner user" },
-              { name: "markdown_specification", component: "input-text", label: "markdown specification" },
+              { name: "markdown_specification", component: "input-markdown", label: "markdown specification" },
               { name: "estimated_minutes", component: "input-number", label: "estimated minutes" },
             ],
           },
