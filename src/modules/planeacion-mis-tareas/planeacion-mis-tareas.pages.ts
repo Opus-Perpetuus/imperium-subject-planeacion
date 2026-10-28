@@ -2,6 +2,7 @@ import {
   build_feature_shell_page,
   type KirletPageDecl,
 } from "@opus-perpetuus/imperium-core-kit";
+import { general_option_list_options_source } from "../../general-option-seeds.ts";
 
 const API = "api://m/subject-planeacion";
 
@@ -58,12 +59,17 @@ export const planeacion_mis_tareas_pages: KirletPageDecl[] = [
                 name: "priority",
                 component: "input-menu",
                 label: "priority",
-                options: [
-                  { value: "baja", label: "Baja" },
-                  { value: "media", label: "Media" },
-                  { value: "alta", label: "Alta" },
-                  { value: "critica", label: "Crítica" },
-                ],
+                // Opciones: general-option-list-control (seed en general-option-seeds.ts).
+                optionsSource: general_option_list_options_source(
+                  "subject-planeacion/planeacion-mis-tareas",
+                  "priority",
+                ),
+              },
+              {
+                name: "state",
+                component: "input-status",
+                label: "Estado",
+                // Opciones: status-option-control (seed en status-seeds.ts).
               },
               { name: "due_date", component: "input-date", label: "due date" },
               { name: "parent_task", component: "input-datalist", label: "parent task", optionsSource: "api://m/subject-planeacion/planeacion-mis-tareas?as=options&limite=1000" },

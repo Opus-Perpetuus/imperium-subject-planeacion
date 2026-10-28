@@ -2,6 +2,7 @@ import {
   build_feature_shell_page,
   type KirletPageDecl,
 } from "@opus-perpetuus/imperium-core-kit";
+import { general_option_list_options_source } from "../../general-option-seeds.ts";
 
 const API = "api://m/subject-planeacion";
 
@@ -58,18 +59,22 @@ export const planeacion_proyectos_pages: KirletPageDecl[] = [
                 name: "priority",
                 component: "input-menu",
                 label: "priority",
-                options: [
-                  { value: "baja", label: "Baja" },
-                  { value: "media", label: "Media" },
-                  { value: "alta", label: "Alta" },
-                  { value: "critica", label: "Crítica" },
-                ],
+                // Opciones: general-option-list-control (seed en general-option-seeds.ts).
+                optionsSource: general_option_list_options_source(
+                  "subject-planeacion/planeacion-proyectos",
+                  "priority",
+                ),
               },
               { name: "start_date", component: "input-date", label: "start date" },
               { name: "due_date", component: "input-date", label: "due date" },
               { name: "owner_user", component: "input-text", label: "owner user" },
               { name: "user_id", component: "input-text", label: "user id" },
-              { name: "status", component: "input-text", label: "status" },
+              {
+                name: "state",
+                component: "input-status",
+                label: "Estado",
+                // Opciones: status-option-control (seed en status-seeds.ts). RAW_DEFAULTS: state.
+              },
               { name: "invited_at", component: "input-datetime", label: "invited at" },
               { name: "responded_by_user", component: "input-text", label: "responded by user" },
               { name: "markdown_specification", component: "input-markdown", label: "markdown specification" },

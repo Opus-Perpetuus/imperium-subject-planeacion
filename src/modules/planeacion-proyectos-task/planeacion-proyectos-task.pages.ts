@@ -48,6 +48,12 @@ export const planeacion_proyectos_task_pages: KirletPageDecl[] = [
               { name: "name", component: "input-text", label: "Nombre", required: true },
               { name: "description", component: "input-textarea", label: "Descripción" },
               { name: "ref", component: "input-text", label: "Referencia (_ref)" },
+              {
+                name: "status",
+                component: "input-status",
+                label: "Estado",
+                // Opciones: status-option-control (seed en status-seeds.ts). RAW_DEFAULTS: status.
+              },
             ],
           },
         },
