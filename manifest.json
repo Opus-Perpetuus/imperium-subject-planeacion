@@ -96,22 +96,78 @@
     {
       "id": "planeacion.tickets",
       "path": "tickets",
-      "permission": "subject.planeacion.tickets.read"
+      "permission": "subject.planeacion.tickets.read",
+      "leaf": {
+        "kind": "crud",
+        "appBase": "tickets",
+        "icon": "fa-ticket",
+        "listHeaders": {
+          "es": {
+            "name": "Nombre",
+            "state": "Estado",
+            "ref": "Referencia"
+          }
+        },
+        "permission": "subject.planeacion.tickets.read"
+      }
     },
     {
       "id": "planeacion.planeacion-proyectos",
       "path": "planeacion-proyectos",
-      "permission": "subject.planeacion.planeacion-proyectos.read"
+      "permission": "subject.planeacion.planeacion-proyectos.read",
+      "leaf": {
+        "kind": "crud",
+        "appBase": "planeacion-proyectos",
+        "icon": "fa-diagram-project",
+        "listHeaders": {
+          "es": {
+            "name": "Nombre",
+            "status": "Estado",
+            "priority": "Prioridad",
+            "start_date": "Inicio",
+            "due_date": "Entrega",
+            "progress_percentage": "Avance"
+          }
+        },
+        "permission": "subject.planeacion.planeacion-proyectos.read"
+      }
     },
     {
       "id": "planeacion.planeacion-mis-tareas",
       "path": "planeacion-mis-tareas",
-      "permission": "subject.planeacion.planeacion-mis-tareas.read"
+      "permission": "subject.planeacion.planeacion-mis-tareas.read",
+      "leaf": {
+        "kind": "crud",
+        "appBase": "planeacion-mis-tareas",
+        "icon": "fa-list-check",
+        "listHeaders": {
+          "es": {
+            "name": "Nombre",
+            "state": "Estado",
+            "priority": "Prioridad",
+            "due_date": "Entrega"
+          }
+        },
+        "permission": "subject.planeacion.planeacion-mis-tareas.read"
+      }
     },
     {
       "id": "planeacion.planeacion-proyectos-task",
       "path": "planeacion-proyectos-task",
-      "permission": "subject.planeacion.planeacion-proyectos-task.read"
+      "permission": "subject.planeacion.planeacion-proyectos-task.read",
+      "leaf": {
+        "kind": "crud",
+        "appBase": "planeacion-proyectos-task",
+        "icon": "fa-clipboard-list",
+        "listHeaders": {
+          "es": {
+            "name": "Nombre",
+            "state": "Estado",
+            "ref": "Referencia"
+          }
+        },
+        "permission": "subject.planeacion.planeacion-proyectos-task.read"
+      }
     }
   ],
   "storage": {
@@ -123,5 +179,7 @@
     "planeacion-proyectos": "planeacion-proyectos",
     "planeacion-mis-tareas": "planeacion-mis-tareas",
     "planeacion-proyectos-task": "planeacion-proyectos-task"
-  }
+  },
+  "manifestVersion": 1,
+  "$schema": "https://schemas.opus-perpetuus.dev/imperium/kirlet-manifest/1.0.json"
 }

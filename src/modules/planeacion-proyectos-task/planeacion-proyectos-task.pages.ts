@@ -2,6 +2,7 @@ import {
   build_feature_shell_page,
   type KirletPageDecl,
 } from "@opus-perpetuus/imperium-core-kit";
+import { leaf_for } from "../../page-leaves.ts";
 
 const API = "api://m/subject-planeacion";
 
@@ -10,6 +11,7 @@ export const planeacion_proyectos_task_pages: KirletPageDecl[] = [
     id: "planeacion.planeacion-proyectos-task",
     path: "planeacion-proyectos-task",
     permission: "subject.planeacion.planeacion-proyectos-task.read",
+    leaf: leaf_for("planeacion.planeacion-proyectos-task"),
     build: () =>
       build_feature_shell_page({
         id: "planeacion.planeacion-proyectos-task",
